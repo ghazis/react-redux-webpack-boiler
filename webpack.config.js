@@ -1,4 +1,5 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: './src/index.js',
@@ -13,6 +14,14 @@ module.exports = {
 		historyApiFallback: true,
 		contentBase: path.join(__dirname, 'dist')
 	},
+	plugins: [
+	  new HtmlWebpackPlugin({
+	    title: 'Test App',
+	    filename: 'index.html',
+	    template: 'src/index.template.html',
+	    chunksSortMode: 'none'
+	  }),
+	],
 	module: {
 		rules: [
 			{

@@ -1,4 +1,8 @@
-import { initialState } from './states';
+import { combineReducers } from 'redux';
+
+const initialState = {
+   button_toggled: "Off"
+}
 
 export function appState(state = initialState, action) {
 	switch (action.type) {
@@ -11,3 +15,7 @@ export function appState(state = initialState, action) {
 			return state;
 	}
 }
+
+export default combineReducers({
+   appState
+})
